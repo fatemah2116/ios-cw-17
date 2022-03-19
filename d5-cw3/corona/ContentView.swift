@@ -29,18 +29,15 @@ struct ContentView: View {
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
                 // name of new cases
-                ForEach(peopl,id: \.id){ i in
+                List(peopl,id: \.id){ i in
                 VStack{
         // الحالة الأولى
                 // الاسم
                     Text("\(i.fullName)")
-                        .font(.largeTitle)
 // المنطقة
                     Text("\(i.area)")
-                        .font(.title)
                     // عدد الجرعات
                     Text("\(i.numberOfDoses)")
-                        .font(.title3)
 
                 }}
                     
