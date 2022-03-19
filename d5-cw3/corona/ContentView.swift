@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+var peopl = [
+    UserCovidInfo(fullName: "فاطمه ", area:"بیان" , numberOfDoses: 2),
+    UserCovidInfo(fullName: "علي", area:"حولي" , numberOfDoses:3),
+    UserCovidInfo(fullName: "حوراء", area:"الشعب" , numberOfDoses:1)
+]
 
-// يجب عمل هيكل وكائنات من الهيكل
 
 
 struct ContentView: View {
@@ -25,37 +29,21 @@ struct ContentView: View {
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
                 // name of new cases
+                ForEach(peopl,id: \.id){ i in
                 VStack{
         // الحالة الأولى
                 // الاسم
-               Text("")
+                    Text("\(i.fullName)")
+                        .font(.largeTitle)
 // المنطقة
-                Text("")
+                    Text("\(i.area)")
+                        .font(.title)
                     // عدد الجرعات
-               Text("")
+                    Text("\(i.numberOfDoses)")
+                        .font(.title3)
 
-                Divider()
-                }
-                VStack{
-        // الحالة الثانية
-                // الاسم
-               Text("")
-                // المنطقة
-               Text("")
-    // عدد الجرعات
-               Text("")
-
-                Divider()
-                }
-                VStack{
-              // الحالة الثالثة
-                      // الاسم
-                     Text("")
-                      // المنطقة
-                     Text("")
-          // عدد الجرعات
-                     Text("")
-                }
+                }}
+                    
                 Spacer()
                 HStack{
                     Text("آخر تحديث ١٥-٣-٢٠٢٢")
